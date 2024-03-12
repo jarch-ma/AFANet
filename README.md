@@ -16,8 +16,9 @@ Method 1： Download the packaged environment (Recommend)
 1. Download AFANet environment from [[Google Drive](https://drive.google.com/file/d/1z1bjhJON1z2-T8bjL8wiwXloY3NOaGbZ/view?usp=sharing)]
 2. Create an empty folder named AFANet in the conda envs directory, and move the file afanet_envs.tar.gz into this folder
 3. CD AFANet folder，then type:
+```bash
 >  tar -zxvf afanet_envs.tar
-
+```
 Method 2：, following IMR-HSNet:
 - Python 3.7
 - PyTorch 1.5.1

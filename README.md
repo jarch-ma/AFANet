@@ -19,7 +19,7 @@ Method 1： Download the packaged environment (Recommend)
 ```bash
 tar -zxvf afanet_envs.tar
 ```
-Method 2：, following IMR-HSNet:
+Method 2：following IMR-HSNet:
 - Python 3.7
 - PyTorch 1.5.1
 - cuda 10.1

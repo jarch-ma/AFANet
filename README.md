@@ -17,7 +17,7 @@ Method 1： Download the packaged environment (Recommend)
 2. Create an empty folder named AFANet in the conda envs directory, and move the file afanet_envs.tar.gz into this folder
 3. CD AFANet folder，then type:
 ```bash
->  tar -zxvf afanet_envs.tar
+tar -zxvf afanet_envs.tar
 ```
 Method 2：, following IMR-HSNet:
 - Python 3.7

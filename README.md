@@ -1,169 +1,124 @@
-# AFANet
+# AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation
+
 The code will be released when the paper is accepted by ECCV2024.
 
+## Abstract
+<img width="80%" src="assets/main_arch.png"><br>
+Few-shot learning aims to recognize novel concepts by leveraging prior knowledge learned from a few samples. However, for visually intensive tasks such as few-shot semantic segmentation, pixel-level annotations are time-consuming and costly. Therefore, in this work, we utilize the more challenging image-level annotations and propose an adaptive frequency-aware network (AFANet) for weakly-supervised few-shot semantic segmentation (WFSS). Specifically, we first propose a cross-granularity frequency-aware module (CFM) that decouples RGB images into high-frequency and low-frequency distributions and further optimizes semantic structural information by realigning them. Unlike most existing WFSS methods using the textual information from the language-vision model CLIP in an offline learning manner, we further propose a CLIP-guided spatial-adapter module (CSM), which performs spatial domain adaptive transformation on textual information through online learning, thus providing cross-modal semantic information for CFM. Extensive experiments on the Pascal-5\textsuperscript{i} and COCO-20\textsuperscript{i} datasets demonstrate that AFANet has achieved state-of-the-art performance.
 
-## AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation
-This is the implementation of the paper "AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation".  
+For further details and visualization results, please check out our [paper](https://arxiv.org/abs/2311.15537).
 
-The codes are implemented based on IMR-HSNet([https://github.com/juhongm999/hsnet](https://github.com/Whileherham/IMR-HSNet)), CLIP(https://github.com/openai/CLIP), and https://github.com/jacobgil/pytorch-grad-cam. Thanks for their great work!  
+## Installation
+Please follow [installation](INSTALL.md). 
 
-
-## Requirements (For Chinese, please refer to alternative installation methods below.)
-
-## We have two installation methods:
-
-Method 1： Download the packaged environment (Recommend)
-1. Download AFANet environment from [[Google Drive](https://drive.google.com/file/d/1z1bjhJON1z2-T8bjL8wiwXloY3NOaGbZ/view?usp=sharing)]
-2. Create an empty folder named AFANet in the conda envs directory, and move the file afanet_envs.tar.gz into this folder
-3. CD AFANet folder，then type:
-```bash
-tar -zxvf afanet_envs.tar
-```
-Method 2：following IMR-HSNet:
-- Python 3.7
-- PyTorch 1.5.1
-- cuda 10.1
-- tensorboard 1.14
-
-Conda environment settings:
-```bash
-conda create -n afanet python=3.7
-conda activate afanet
-conda install pytorch=1.5.1 torchvision cudatoolkit=10.1 -c pytorch
-conda install -c conda-forge tensorflow
-pip install tensorboardX
-```
-
-Preparing Few-Shot Segmentation Datasets
-Download following datasets:
-
-> #### 1. PASCAL-5<sup>i</sup>
-> Download PASCAL VOC2012 devkit (train/val data):
-> ```bash
-> wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
-> ```
-> Download PASCAL VOC2012 SDS extended mask annotations from HSNet [[Google Drive](https://drive.google.com/file/d/10zxG2VExoEZUeyQl_uXga2OWHjGeZaf2/view?usp=sharing)].
-
-
-> #### 2. COCO-20<sup>i</sup>
-> Download COCO2014 train/val images and annotations: 
-> ```bash
-> wget http://images.cocodataset.org/zips/train2014.zip
-> wget http://images.cocodataset.org/zips/val2014.zip
-> wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
-> ```
-> Download COCO2014 train/val annotations from HSNet Google Drive: [[train2014.zip](https://drive.google.com/file/d/1cwup51kcr4m7v9jO14ArpxKMA4O3-Uge/view?usp=sharing)], [[val2014.zip](https://drive.google.com/file/d/1PNw4U3T2MhzAEBWGGgceXvYU3cZ7mJL1/view?usp=sharing)].
-> (and locate both train2014/ and val2014/ under annotations/ directory).
-
-## 对于国人，我们更推荐以下安装方式，全都打包好了：
-包含：1.conda环境；2.CAM；3.Data；4.pretrain model
-https://www.alipan.com/s/C6UqfuZ8sAg
-
-Create a directory 'Dataset' for the above three few-shot segmentation datasets and appropriately place each dataset to have following directory structure:
-Dataset/                       
-└── Datasets_AFANet/
-    ├── VOC2012/            # PASCAL VOC2012 devkit
-    │   ├── Annotations/
-    │   ├── ImageSets/
-    │   ├── ...
-    │   └── SegmentationClassAug/
-    ├── COCO2014/           
-    │   ├── annotations/
-    │   │   ├── train2014/  # (dir.) training masks (from Google Drive) 
-    │   │   ├── val2014/    # (dir.) validation masks (from Google Drive)
-    │   │   └── ..some json files..
-    │   ├── train2014/
-    │   └── val2014/
-    ├── CAM_VOC_Train/ 
-    ├── CAM_VOC_Val/ 
-    └── CAM_COCO/
-            
-
-## Preparing CAM for Few-Shot Segmentation Datasets
-1. PASCAL-5<sup>i</sup>
-> * Generate Grad CAM for images
-> ```bash
-> python generate_cam_voc.py --traincampath ../Datasets_AFANet/CAM_VOC_Train/
->                            --valcampath ../Datasets_AFANet/CAM_VOC_Val/
-> ```
-
-2. COCO-20<sup>i</sup>
-> ```bash
-> python generate_cam_coco.py --campath ../Datasets_AFANet/CAM_COCO/
-
-
-
+## Data Preparation
+Please follow [dataset preperation](datasets/README.md).
 
 ## Training
-> ### 1. PASCAL-5<sup>i</sup>
-> ```bash
-> python train.py --backbone {vgg16, resnet50} 
->                 --fold {0, 1, 2, 3} 
->                 --benchmark pascal
->                 --lr 4e-4
->                 --bsz 16
->                 --stage 2
->                 --logpath "your_experiment_name"  # (option)  
->                 --traincampath ../Datasets_AFANet/CAM_VOC_Train/
->                 --valcampath ../Datasets_AFANet/CAM_VOC_Val/
-> ```
+We provide shell scripts for training and evaluation. ```run.sh``` trains the model in default configuration and evaluates the model after training. 
 
-Set the above parameters to their default values, then run:
-> ############
-> 
-> 
-> 
-> * Training takes approx. 10 hours until convergence (trained with four 3090 GPUs).
+To train or evaluate the model in different environments, modify the given shell script and config files accordingly.
+
+### Training script
+```bash
+sh run.sh [CONFIG] [NUM_GPUS] [OUTPUT_DIR] [OPTS]
+
+# For ConvNeXt-B variant
+sh run.sh configs/convnextB_768.yaml 4 output/
+# For ConvNeXt-L variant
+sh run.sh configs/convnextL_768.yaml 4 output/
+```
+
+## Evaluation
+```eval.sh``` automatically evaluates the model following our evaluation protocol, with weights in the output directory if not specified.
+To individually run the model in different datasets, please refer to the commands in ```eval.sh```.
+
+### Evaluation script
+```bash
+sh run.sh [CONFIG] [NUM_GPUS] [OUTPUT_DIR] [OPTS]
+
+sh eval.sh configs/convnextB_768.yaml 4 output/ MODEL.WEIGHTS path/to/weights.pth
+
+# Fast version.
+sh eval.sh configs/convnextB_768.yaml 4 output/ MODEL.WEIGHTS path/to/weights.pth  TEST.FAST_INFERENCE True  TEST.TOPK 8
+```
+
+## Results
+<img width="50%" src="assets/trade-off.png"><br>
+We provide pretrained weights for our models reported in the paper. All of the models were evaluated with 4 NVIDIA A6000 GPUs, and can be reproduced with the evaluation script above. 
+The inference time is reported on a single NVIDIA A6000 GPU.
+
+<table><tbody>
+<!-- START TABLE -->
+<!-- TABLE HEADER -->
+<th valign="bottom">Name</th>
+<th valign="bottom">CLIP</th>
+<th valign="bottom">A-847</th>
+<th valign="bottom">PC-459</th>
+<th valign="bottom">A-150</th>
+<th valign="bottom">PC-59</th>
+<th valign="bottom">PAS-20</th>
+<th valign="bottom">Download</th>
+<!-- TABLE BODY -->
+<!-- ROW: SED (B) -->
+<tr>
+<td align="center">SED (B)</a></td>
+<td align="center">ConvNeXt-B</td>
+<td align="center">11.2</td>
+<td align="center">18.6</td>
+<td align="center">31.8</td>
+<td align="center">57.7</td>
+<td align="center">94.4</td>
+<td align="center"><a href="https://drive.google.com/file/d/1qx6zGZgSPkF6TObregRz4uzQqSRHrgUw/view?usp=drive_link">ckpt</a>&nbsp;
+</tr>
+<!-- ROW: SED (B) -->
+<tr>
+<td align="center">SED-fast (B)</a></td>
+<td align="center">ConvNeXt-B</td>
+<td align="center">11.4</td>
+<td align="center">18.6</td>
+<td align="center">31.6</td>
+<td align="center">57.3</td>
+<td align="center">94.4</td>
+<td align="center"><a href="https://drive.google.com/file/d/1qx6zGZgSPkF6TObregRz4uzQqSRHrgUw/view?usp=drive_link">ckpt</a>&nbsp;
+</tr>
+<!-- ROW: SED (L) -->
+<tr>
+<td align="center">SED (L)</a></td>
+<td align="center">ConvNeXt-L</td>
+<td align="center">13.7</td>
+<td align="center">22.1</td>
+<td align="center">35.3</td>
+<td align="center">60.9</td>
+<td align="center">96.1</td>
+<td align="center"><a href="https://drive.google.com/file/d/1zAXE0QXy47n0cVn7j_2cSR85eqxdDGg8/view?usp=drive_link">ckpt</a>&nbsp;
+</tr>
+<!-- ROW: SED-fast (L) -->
+ <tr><td align="center">SED-fast (L)</a></td>
+<td align="center">ConvNeXt-L</td>
+<td align="center">13.9</td>
+<td align="center">22.6</td>
+<td align="center">35.2</td>
+<td align="center">60.6</td>
+<td align="center">96.1</td>
+<td align="center"><a href="https://drive.google.com/file/d/1zAXE0QXy47n0cVn7j_2cSR85eqxdDGg8/view?usp=drive_link">ckpt</a>&nbsp;
+</tr>
+</tbody></table>
 
 
-> ### 2. COCO-20<sup>i</sup>
-> ```bash
-> python train.py --backbone {vgg16, resnet50}
->                 --fold {0, 1, 2, 3} 
->                 --benchmark coco 
->                 --lr 1e-4
->                 --bsz 20
->                 --stage 3
->                 --logpath "your_experiment_name" # (option)  
->                 --traincampath ../Datasets_AFANet/CAM_COCO/
->                 --valcampath ../Datasets_AFANet/CAM_COCO/
-> ```
-> * Training takes approx. 3 days until convergence (trained four 3090 GPUs).
 
+## Citation
 
-> ### Babysitting training:
-> Use tensorboard to babysit training progress:
-> - For each experiment, a directory that logs training progress will be automatically generated under logs/ directory. 
-> - From terminal, run 'tensorboard --logdir logs/' to monitor the training progress.
-> - Choose the best model when the validation (mIoU) curve starts to saturate. 
+```BibTeX
+@misc{xie2023sed,
+      title={SED: A Simple Encoder-Decoder for Open-Vocabulary Semantic Segmentation}, 
+      author={Bin Xie and Jiale Cao and Jin Xie and Fahad Shahbaz Khan and Yanwei Pang},
+      year={2023},
+      eprint={2311.15537},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
 
-
-
-## Testing
-
-> ### 1. PASCAL-5<sup>i</sup>
-> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/18Qd_7nBZgzMyaBUWFJhH1yA3y9aWCZwA?usp=sharing)].
-> ```bash
-> python test.py --backbone {vgg16, resnet50} 
->                --fold {0, 1, 2, 3} 
->                --benchmark pascal
->                --nshot {1, 5} 
->                --load "path_to_trained_model/fold_0.pt"  
-> ```
-
-> ### 2. COCO-20<sup>i</sup>
-> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/18Qd_7nBZgzMyaBUWFJhH1yA3y9aWCZwA?usp=sharing)].
-> ```bash
-> python test.py --backbone {vgg16, resnet50} 
->                --fold {0, 1, 2, 3} 
->                --benchmark coco 
->                --nshot {1, 5} 
->                --load "path_to_trained_model/fold_0.pt"
-> ```
-
-
-
-   
-
-
-
+## Acknowledgement
+We would like to acknowledge the contributions of public projects, such as [CAT-Seg](https://github.com/KU-CVLAB/CAT-Seg), whose code has been utilized in this repository.

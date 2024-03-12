@@ -5,7 +5,7 @@ The code will be released when the paper is accepted by ECCV2024.
 ## AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation
 This is the implementation of the paper "AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation".  
 
-The codes are implemented based on IMR-HSNet(https://github.com/juhongm999/hsnet), CLIP(https://github.com/openai/CLIP), and https://github.com/jacobgil/pytorch-grad-cam. Thanks for their great work!  
+The codes are implemented based on IMR-HSNet([https://github.com/juhongm999/hsnet](https://github.com/Whileherham/IMR-HSNet)), CLIP(https://github.com/openai/CLIP), and https://github.com/jacobgil/pytorch-grad-cam. Thanks for their great work!  
 
 
 ## Requirements (For Chinese, please refer to alternative installation methods below.)

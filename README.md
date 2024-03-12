@@ -7,17 +7,17 @@ This is the implementation of the paper "AFANet: Adaptive Frequency-Aware Networ
 
 The codes are implemented based on IMR-HSNet(https://github.com/juhongm999/hsnet), CLIP(https://github.com/openai/CLIP), and https://github.com/jacobgil/pytorch-grad-cam. Thanks for their great work!  
 
-## Requirements (For Chinese, please refer to alternative installation methods below.)
+Requirements (For Chinese, please refer to alternative installation methods below.)
 
-## We have two installation methods
+We have two installation methods
 
-## Method 1： Download the packaged environment (Recommend)
+Method 1： Download the packaged environment (Recommend)
 1. Download AFANet environment from [[Google Drive](https://drive.google.com/file/d/1z1bjhJON1z2-T8bjL8wiwXloY3NOaGbZ/view?usp=sharing)]
 2. Create an empty folder named AFANet in the conda envs directory, and move the file afanet_envs.tar.gz into this folder
 3. CD AFANet folder，then type:
 >  tar -zxvf afanet_envs.tar
 
-## Method 2：, following IMR-HSNet:
+Method 2：, following IMR-HSNet:
 - Python 3.7
 - PyTorch 1.5.1
 - cuda 10.1
@@ -32,7 +32,7 @@ conda install -c conda-forge tensorflow
 pip install tensorboardX
 ```
 
-## Preparing Few-Shot Segmentation Datasets
+Preparing Few-Shot Segmentation Datasets
 Download following datasets:
 
 > #### 1. PASCAL-5<sup>i</sup>

@@ -33,64 +33,6 @@ sh run.sh c
 We provide pretrained weights for our models reported in the paper. All of the models were evaluated with 4 RTX 3090 GPUs, and can be reproduced with the evaluation script above. 
 The inference time is reported on a single RTX 3090 GPU.
 
-<table><tbody>
-<!-- START TABLE -->
-<!-- TABLE HEADER -->
-<th valign="bottom">Name</th>
-<th valign="bottom">CLIP</th>
-<th valign="bottom">A-847</th>
-<th valign="bottom">PC-459</th>
-<th valign="bottom">A-150</th>
-<th valign="bottom">PC-59</th>
-<th valign="bottom">PAS-20</th>
-<th valign="bottom">Download</th>
-<!-- TABLE BODY -->
-<!-- ROW: SED (B) -->
-<tr>
-<td align="center">SED (B)</a></td>
-<td align="center">ConvNeXt-B</td>
-<td align="center">11.2</td>
-<td align="center">18.6</td>
-<td align="center">31.8</td>
-<td align="center">57.7</td>
-<td align="center">94.4</td>
-<td align="center"><a href="https://drive.google.com/file/d/1qx6zGZgSPkF6TObregRz4uzQqSRHrgUw/view?usp=drive_link">ckpt</a>&nbsp;
-</tr>
-<!-- ROW: SED (B) -->
-<tr>
-<td align="center">SED-fast (B)</a></td>
-<td align="center">ConvNeXt-B</td>
-<td align="center">11.4</td>
-<td align="center">18.6</td>
-<td align="center">31.6</td>
-<td align="center">57.3</td>
-<td align="center">94.4</td>
-<td align="center"><a href="https://drive.google.com/file/d/1qx6zGZgSPkF6TObregRz4uzQqSRHrgUw/view?usp=drive_link">ckpt</a>&nbsp;
-</tr>
-<!-- ROW: SED (L) -->
-<tr>
-<td align="center">SED (L)</a></td>
-<td align="center">ConvNeXt-L</td>
-<td align="center">13.7</td>
-<td align="center">22.1</td>
-<td align="center">35.3</td>
-<td align="center">60.9</td>
-<td align="center">96.1</td>
-<td align="center"><a href="https://drive.google.com/file/d/1zAXE0QXy47n0cVn7j_2cSR85eqxdDGg8/view?usp=drive_link">ckpt</a>&nbsp;
-</tr>
-<!-- ROW: SED-fast (L) -->
- <tr><td align="center">SED-fast (L)</a></td>
-<td align="center">ConvNeXt-L</td>
-<td align="center">13.9</td>
-<td align="center">22.6</td>
-<td align="center">35.2</td>
-<td align="center">60.6</td>
-<td align="center">96.1</td>
-<td align="center"><a href="https://drive.google.com/file/d/1zAXE0QXy47n0cVn7j_2cSR85eqxdDGg8/view?usp=drive_link">ckpt</a>&nbsp;
-</tr>
-</tbody></table>
-
-
 
 ## Citation
 ...

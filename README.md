@@ -53,32 +53,32 @@ wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
 ```
 2. Download COCO2014 train/val annotations from HSNet Google Drive: [[train2014.zip](https://drive.google.com/file/d/1cwup51kcr4m7v9jO14ArpxKMA4O3-Uge/view?usp=sharing)], [[val2014.zip](https://drive.google.com/file/d/1PNw4U3T2MhzAEBWGGgceXvYU3cZ7mJL1/view?usp=sharing)].
 
-3.Create a directory '../Datasets_HSN' for the above three few-shot segmentation datasets and appropriately place each dataset to have following directory structure:
-
-    ../                         # parent directory
-    ├── ./                      # current (project) directory
-    │   ├── common/             # (dir.) helper functions
-    │   ├── data/               # (dir.) dataloaders and splits for each FSSS dataset
-    │   ├── model/              # (dir.) implementation of Hypercorrelation Squeeze Network model 
-    │   ├── README.md           # intstruction for reproduction
-    │   ├── train.py            # code for training HSNet
-    │   └── test.py             # code for testing HSNet
-    └── Datasets_HSN/
-        ├── VOC2012/            # PASCAL VOC2012 devkit
-        │   ├── Annotations/
-        │   ├── ImageSets/
-        │   ├── ...
-        │   └── SegmentationClassAug/
-        ├── COCO2014/           
-        │   ├── annotations/
-        │   │   ├── train2014/  # (dir.) training masks (from Google Drive) 
-        │   │   ├── val2014/    # (dir.) validation masks (from Google Drive)
-        │   │   └── ..some json files..
-        │   ├── train2014/
-        │   └── val2014/
-        ├── CAM_VOC_Train/ 
-        ├── CAM_VOC_Val/ 
-        └── CAM_COCO/
+3. Create a directory '../Datasets_AFANet' for the above three few-shot segmentation datasets and appropriately place each dataset to have following directory structure:
+    
+        ../                         # parent directory
+        ├── ./                      # current (project) directory
+        │   ├── common/             # (dir.) helper functions
+        │   ├── data/               # (dir.) dataloaders and splits for each FSSS dataset
+        │   ├── model/              # (dir.) implementation of Hypercorrelation Squeeze Network model 
+        │   ├── README.md           # intstruction for reproduction
+        │   ├── train.py            # code for training AFANet
+        │   └── test.py             # code for testing AFANet
+        └── Datasets_AFANet/
+            ├── VOC2012/            # PASCAL VOC2012 devkit
+            │   ├── Annotations/
+            │   ├── ImageSets/
+            │   ├── ...
+            │   └── SegmentationClassAug/
+            ├── COCO2014/           
+            │   ├── annotations/
+            │   │   ├── train2014/  # (dir.) training masks (from Google Drive) 
+            │   │   ├── val2014/    # (dir.) validation masks (from Google Drive)
+            │   │   └── ..some json files..
+            │   ├── train2014/
+            │   └── val2014/
+            ├── CAM_VOC_Train/ 
+            ├── CAM_VOC_Val/ 
+            └── CAM_COCO/
        
 
 ## Preparing CAM for Weakly Few-Shot Segmentation Datasets

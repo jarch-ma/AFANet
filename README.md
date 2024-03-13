@@ -55,30 +55,30 @@ wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
 
 3. Create a directory '../Datasets_AFANet' for the above three few-shot segmentation datasets and appropriately place each dataset to have following directory structure:
     
-        ../                         # parent directory
-        ├── ./                      # current (project) directory
-        │   ├── common/             # (dir.) helper functions
-        │   ├── data/               # (dir.) dataloaders and splits for each FSSS dataset
-        │   ├── model/              # (dir.) implementation of Hypercorrelation Squeeze Network model 
-        │   ├── README.md           # intstruction for reproduction
-        │   ├── train.py            # code for training AFANet
-        │   └── test.py             # code for testing AFANet
-        └── Datasets_AFANet/
-            ├── VOC2012/            # PASCAL VOC2012 devkit
-            │   ├── Annotations/
-            │   ├── ImageSets/
-            │   ├── ...
-            │   └── SegmentationClassAug/
-            ├── COCO2014/           
-            │   ├── annotations/
-            │   │   ├── train2014/  # (dir.) training masks (from Google Drive) 
-            │   │   ├── val2014/    # (dir.) validation masks (from Google Drive)
-            │   │   └── ..some json files..
-            │   ├── train2014/
-            │   └── val2014/
-            ├── CAM_VOC_Train/ 
-            ├── CAM_VOC_Val/ 
-            └── CAM_COCO/
+            ../                         # parent directory
+            ├── ./                      # current (project) directory
+            │   ├── common/             # (dir.) helper functions
+            │   ├── data/               # (dir.) dataloaders and splits for each FSSS dataset
+            │   ├── model/              # (dir.) implementation of Hypercorrelation Squeeze Network model 
+            │   ├── README.md           # intstruction for reproduction
+            │   ├── train.py            # code for training AFANet
+            │   └── test.py             # code for testing AFANet
+            └── Datasets_AFANet/
+                ├── VOC2012/            # PASCAL VOC2012 devkit
+                │   ├── Annotations/
+                │   ├── ImageSets/
+                │   ├── ...
+                │   └── SegmentationClassAug/
+                ├── COCO2014/           
+                │   ├── annotations/
+                │   │   ├── train2014/  # (dir.) training masks (from Google Drive) 
+                │   │   ├── val2014/    # (dir.) validation masks (from Google Drive)
+                │   │   └── ..some json files..
+                │   ├── train2014/
+                │   └── val2014/
+                ├── CAM_VOC_Train/ 
+                ├── CAM_VOC_Val/ 
+                └── CAM_COCO/
        
 
 ## Preparing CAM for Weakly Few-Shot Segmentation Datasets

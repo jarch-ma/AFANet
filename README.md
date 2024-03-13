@@ -14,7 +14,7 @@ Few-shot learning aims to recognize novel concepts by leveraging prior knowledge
 For further details and visualization results, please check out our [paper](XXXXXX).
 -->
 ## Installation (Recommend)
-1. Download the environment we have packaged: [Google drive](https://drive.google.com/file/d/1z1bjhJON1z2-T8bjL8wiwXloY3NOaGbZ/view?usp=drive_link)；[Baidu drive](https://pan.baidu.com/s/1E4f4Xl8epAguo0hxGijF_w?pwd=n4nm). Extraction code: n4nm
+1. Download the environment we have packaged: [Google drive](https://drive.google.com/file/d/1z1bjhJON1z2-T8bjL8wiwXloY3NOaGbZ/view?usp=drive_link) or, [Baidu drive](https://pan.baidu.com/s/1E4f4Xl8epAguo0hxGijF_w?pwd=n4nm). Extraction code: n4nm
 2. Create the folder afanet in the conda envs directory
 ```bash
 mkdir afanet

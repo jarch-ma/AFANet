@@ -7,7 +7,7 @@ The code will be released when the paper is accepted by ECCV2024.
 Few-shot learning aims to recognize novel concepts by leveraging prior knowledge learned from a few samples. However, for visually intensive tasks such as few-shot semantic segmentation, pixel-level annotations are time-consuming and costly. Therefore, in this work, we utilize the more challenging image-level annotations and propose an adaptive frequency-aware network (AFANet) for weakly-supervised few-shot semantic segmentation (WFSS). Specifically, we first propose a cross-granularity frequency-aware module (CFM) that decouples RGB images into high-frequency and low-frequency distributions and further optimizes semantic structural information by realigning them. Unlike most existing WFSS methods using the textual information from the language-vision model CLIP in an offline learning manner, we further propose a CLIP-guided spatial-adapter module (CSM), which performs spatial domain adaptive transformation on textual information through online learning, thus providing cross-modal semantic information for CFM. Extensive experiments on the Pascal-5\textsuperscript{i} and COCO-20\textsuperscript{i} datasets demonstrate that AFANet has achieved state-of-the-art performance.
 <!-- 
 ## :fire: News
-- SED is accepted by CVPR 2024.
+......
 -->
 <!-- 
 For further details and visualization results, please check out our [paper](XXXXXX).
@@ -88,7 +88,7 @@ python generate_cam_voc.py --traincampath ../Datasets_AFANet/CAM_VOC_Train/
 2. COCO-20<sup>i</sup>
 ```bash
 python generate_cam_coco.py --campath ../Datasets_AFANet/CAM_COCO/
-``
+``` 
 
 ## Training
 1. PASCAL-5<sup>i</sup>

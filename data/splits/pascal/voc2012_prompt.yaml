@@ -1,0 +1,37 @@
+name: VOC2012prompts
+            
+class:
+    aeroplane: aeroplane of transportation of material
+    bicycle: bicycle of transportation of material
+    bird: bird of Class Aves of animal
+    boat: boat of transportation of material
+    bottle: bottle of crafts of item
+    bus: bus of transportation of material
+    car: car of transportation of material
+    cat: cat of carnivora of mammalia of Animal Kingdom
+    chair: chair of furniture of item
+    cow: cow of Artiodactyla of mammalia of Animal Kingdom
+    diningtable: diningtable of furniture of item
+    dog: dog of carnivora of mammalia of Animal Kingdom
+    horse: horse of perissodactyla of mammalia of Animal Kingdom
+    motorbike: bus of transportation of material
+    person: person of primates of mammalia of Animal Kingdom
+    pottedplant: pottedplant of landscaping plants of Kingdom Plantae
+    sheep: sheep of Artiodactyla of mammalia of Animal Kingdom
+    sofa: sofa of furniture of item
+    train: bus of transportation of material
+    tvmonitor: tvmonitor of Electronic equipment of item
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

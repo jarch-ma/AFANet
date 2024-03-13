@@ -55,14 +55,17 @@ wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
 
 3. Create a directory '../Datasets_AFANet' for the above three few-shot segmentation datasets and appropriately place each dataset to have following directory structure:
 
+
+Create a directory '../Datasets_HSN' for the above three few-shot segmentation datasets and appropriately place each dataset to have following directory structure:
+
     ../                         # parent directory
     ├── ./                      # current (project) directory
     │   ├── common/             # (dir.) helper functions
-    │   ├── data/               # (dir.) dataloaders and splits for each FSS dataset
+    │   ├── data/               # (dir.) dataloaders and splits for each FSSS dataset
     │   ├── model/              # (dir.) implementation of Hypercorrelation Squeeze Network model 
     │   ├── README.md           # intstruction for reproduction
-    │   ├── train.py            # code for training AFANet
-    │   └── test.py             # code for testing AFANet
+    │   ├── train.py            # code for training HSNet
+    │   └── test.py             # code for testing HSNet
     └── Datasets_HSN/
         ├── VOC2012/            # PASCAL VOC2012 devkit
         │   ├── Annotations/
@@ -79,6 +82,7 @@ wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
         ├── CAM_VOC_Train/ 
         ├── CAM_VOC_Val/ 
         └── CAM_COCO/
+            └── CAM_COCO/
 
 ## Preparing CAM for Weakly Few-Shot Segmentation Datasets
 1. PASCAL-5<sup>i</sup>

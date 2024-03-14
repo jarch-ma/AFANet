@@ -44,7 +44,7 @@ wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 ```
 2. Download PASCAL VOC2012 SDS extended mask annotations from HSNet [[Google Drive](https://drive.google.com/file/d/10zxG2VExoEZUeyQl_uXga2OWHjGeZaf2/view?usp=sharing)].
 
-#### 2. COCO-20<sup>i</sup>
+#### COCO-20<sup>i</sup>
 1. Download COCO2014 train/val images and annotations: 
 ```bash
 wget http://images.cocodataset.org/zips/train2014.zip

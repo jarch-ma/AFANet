@@ -58,7 +58,7 @@ wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
             ../                         # parent directory
             ├── ./                      # current (project) directory
             │   ├── common/             # (dir.) helper functions
-            │   ├── data/               # (dir.) dataloaders and splits for each FSSS dataset
+            │   ├── data/               # (dir.) dataloaders and splits for each WFSS dataset
             │   ├── model/              # (dir.) implementation of Hypercorrelation Squeeze Network model 
             │   ├── README.md           # intstruction for reproduction
             │   ├── train.py            # code for training AFANet

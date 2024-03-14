@@ -90,7 +90,8 @@ python generate_cam_voc.py --traincampath ../Datasets_AFANet/CAM_VOC_Train/
 2. COCO-20<sup>i</sup>
 ```bash
 python generate_cam_coco.py --campath ../Datasets_AFANet/CAM_COCO/
-``
+```
+
 
 ## Training
 1. PASCAL-5<sup>i</sup>

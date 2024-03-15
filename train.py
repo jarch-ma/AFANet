@@ -89,7 +89,7 @@ if __name__ == '__main__':
     
     # Arguments parsing
     parser = argparse.ArgumentParser(description='AFANet Pytorch Implementation')
-    parser.add_argument('--datapath', type=str, default='/ssd/s02009/data/irnet_data/')
+    parser.add_argument('--datapath', type=str, default='/ssd/s02009/data/dataset_afanet/')
     parser.add_argument('--benchmark', type=str, default='coco', choices=['pascal', 'coco', 'fss'])
     parser.add_argument('--logpath', type=str, default='')
     parser.add_argument('--bsz', type=int, default=1)  
@@ -98,14 +98,14 @@ if __name__ == '__main__':
     parser.add_argument('--nworker', type=int, default=40)  
     parser.add_argument('--shot', type=int, default=1)
     parser.add_argument('--fold', type=int, default=0, choices=[0, 1, 2, 3])
-    parser.add_argument('--stage', type=int, default=3)         # 迭代次数！！！！
+    parser.add_argument('--stage', type=int, default=3)         # iteration
     parser.add_argument('--backbone', type=str, default='resnet50', choices=['vgg16', 'resnet50', 'resnet101'])
        
-    # parser.add_argument('--traincampath', type=str, default='/opt/data/private/Out/fp_irnet/CAM_VOC_Train/')
-    # parser.add_argument('--valcampath', type=str, default='/opt/data/private/Out/fp_irnet/CAM_VOC_Val/')
+    # parser.add_argument('--traincampath', type=str, default='../dataset_afanet/CAM_VOC_Train/')
+    # parser.add_argument('--valcampath', type=str, default='../dataset_afanet/CAM_VOC_Val/')
     
-    parser.add_argument('--traincampath', type=str, default='/ssd/s02009/out/fp_irnet/njust/coco_cam/')
-    parser.add_argument('--valcampath', type=str, default='/ssd/s02009/out/fp_irnet/njust/coco_cam/')
+    parser.add_argument('--traincampath', type=str, default='../dataset_afanet/coco_cam/')
+    parser.add_argument('--valcampath', type=str, default='../dataset_afanet/coco_cam/')
     
     parser.add_argument('--seed', type=int, default=6776)   
 

@@ -1,4 +1,4 @@
-r""" Hypercorrelation Squeeze testing code """
+
 import argparse
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
@@ -7,7 +7,6 @@ import torch.nn as nn
 import torch
 
 from model.hsnet_imr_njust import HypercorrSqueezeNetwork_imr  # 使用AFANet的网络
-# from model.hsnet_imr_author import HypercorrSqueezeNetwork_imr # 使用IJCAI作者的网络
 from common.logger import Logger, AverageMeter
 from common.vis import Visualizer
 from common.evaluation import Evaluator
@@ -18,7 +17,7 @@ import clip
 
 
 def test(model, dataloader, nshot, stage):
-    r""" Test HSNet """
+        r""" Test AFANet """
 
     # Freeze randomness during testing for reproducibility
     utils.fix_randseed(6776)
@@ -26,14 +25,10 @@ def test(model, dataloader, nshot, stage):
 
     for idx, batch in enumerate(dataloader):
         
-        # 1. Hypercorrelation Squeeze Networks forward pass
+        # 1. forward pass
         batch = utils.to_cuda(batch)
-
-        
         pred_mask = model.module.predict_mask_nshot(batch, nshot=nshot, class_id = batch['class_id'], stage=stage) # AFANet
-        # pred_mask = model.module.predict_mask_nshot(batch, nshot=nshot, stage=stage)
-        # pred_mask = pred_mask.argmax(dim=1)
-        
+   
         assert pred_mask.size() == batch['query_mask'].size()
 
         # 2. Evaluate prediction
@@ -64,28 +59,28 @@ def test(model, dataloader, nshot, stage):
     return miou, fb_iou
 
 
-if __name__ == '__main__':  # 使用的我的模型和作者的要改三个地方：1. 10行：Net; 2. 97行：model； 3. 34行：mask
+if __name__ == '__main__':  
     
     # Arguments parsing
-    parser = argparse.ArgumentParser(description='Hypercorrelation Squeeze Pytorch Implementation')
-    parser.add_argument('--datapath', type=str, default='/ssd/s02009/data/irnet_data/')
+    parser = argparse.ArgumentParser(description='AFANet Pytorch Implementation')
+    parser.add_argument('--datapath', type=str, default='/ssd/s02009/data/afanet_data/')
     parser.add_argument('--benchmark', type=str, default='coco', choices=['pascal', 'coco', 'fss'])
     parser.add_argument('--logpath', type=str, default='')
     parser.add_argument('--bsz', type=int, default=1)   # must be 1 !!
-    parser.add_argument('--nworker', type=int, default=32)  #原来8
-    parser.add_argument('--load', type=str, default='/ssd/s02009/code/fp_irnet/best_model/my_model/coco/fold_2/43.7_coco_resnet_1_shot_fold_2.pt')
+    parser.add_argument('--nworker', type=int, default=32)  
+    parser.add_argument('--load', type=str, default='../afanet_datasnet/model/coco_resnet_1_shot_fold_2.pt') # Specify your path
     
     parser.add_argument('--fold', type=int, default=2, choices=[0, 1, 2, 3])
     parser.add_argument('--nshot', type=int, default=5)
     parser.add_argument('--backbone', type=str, default='resnet50', choices=['vgg16', 'resnet50', 'resnet101'])
-    parser.add_argument('--visualize', action='store_true') # action='store_true' default='visualize'
-    parser.add_argument('--use_original_imgsize', action='store_true') # action='store_true'
+    parser.add_argument('--visualize', action='store_true') # default='visualize'
+    parser.add_argument('--use_original_imgsize', action='store_true') 
     parser.add_argument('--stage', type=int, default=3)
+
+    parser.add_argument('--traincampath', type=str, default='/ssd/s02009/out/afanet/coco_cam/')
+    parser.add_argument('--valcampath', type=str, default='/ssd/s02009/out/afanet/coco_cam/')
     
-    parser.add_argument('--traincampath', type=str, default='/ssd/s02009/out/fp_irnet/njust/coco_cam/')
-    parser.add_argument('--valcampath', type=str, default='/ssd/s02009/out/fp_irnet/njust/coco_cam/')
-    
-    parser.add_argument('--vispath', type=str, default='/ssd/s02009/code/fp_irnet/fp_irnet_njust/vis/voc/fold_3/')
+    parser.add_argument('--vispath', type=str, default='../afanet/vis/voc/')
     
     args = parser.parse_args()
     Logger.initialize(args, training=False)

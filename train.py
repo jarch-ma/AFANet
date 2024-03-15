@@ -2,7 +2,7 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3'
 
 import argparse
 import pdb

@@ -1,6 +1,6 @@
 # AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation
 
-The completed code will be released when the paper is accepted by ECCV2024.
+The completed code will be released when the paper is accepted.
 
 ## Abstract
 <div align=center><img width="80%" src="assets/fig.2.png"></div> 

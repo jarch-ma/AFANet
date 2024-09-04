@@ -35,11 +35,8 @@ The codes are implemented based on IMR-HSNet(https://github.com/juhongm999/hsnet
 
 ## Environment settings:
 ```bash
-conda create -n afanet python=3.7
 conda create -n afanet python=3.9
 conda activate afanet
-
-conda install pytorch=1.5.1 torchvision cudatoolkit=10.1 -c pytorch
 pip3 install torch torchvision torchaudio
 conda install -c conda-forge tensorflow
 pip install tensorboardX
@@ -102,3 +99,20 @@ Create a directory 'Dataset' for the above three few-shot segmentation datasets 
 ### 2. COCO-20<sup>i</sup>
 > ```bash
 > python generate_cam_coco.py --campath ../afanet_data/CAM_COCO/
+
+
+
+
+## Training
+> ### 1. PASCAL-5<sup>i</sup>
+> ```bash
+> python train.py --backbone {vgg16, resnet50} 
+>                 --fold {0, 1, 2, 3} 
+>                 --benchmark pascal
+>                 --lr 4e-4
+>                 --bsz 16
+>                 --stage 2
+>                 --logpath "your_experiment_name"
+>                 --traincampath ../afanet_data/CAM_VOC_Train/
+>                 --valcampath ../afanet_data/CAM_VOC_Val/
+> ```

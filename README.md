@@ -41,7 +41,6 @@ Download following datasets:
 > wget http://images.cocodataset.org/annotations/annotations_trainval2014.zip
 > ```
 > Download COCO2014 train/val annotations from HSNet Google Drive: [[train2014.zip](https://drive.google.com/file/d/1cwup51kcr4m7v9jO14ArpxKMA4O3-Uge/view?usp=sharing)], [[val2014.zip](https://drive.google.com/file/d/1PNw4U3T2MhzAEBWGGgceXvYU3cZ7mJL1/view?usp=sharing)].
-> (and locate both train2014/ and val2014/ under annotations/ directory).
 
 ## Preparing Pre-trained models：
 Download pre-trained weights: ResNet50, VGG16 and ViT from Google Drive: [[Pretrain.zip](https://drive.google.com/file/d/1HKOGnvijW_KGTja_AdyHisRMXztoT10J)].

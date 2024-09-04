@@ -109,7 +109,7 @@ Download pre-trained weights: ResNet50, VGG16 and ViT from Google Drive: [[Pretr
 > ```
 > * Training takes approx. 3 days until convergence (trained with four RTX 3090 GPUs).
 
-> ### Babysitting training:
+### Babysitting training:
 > Use tensorboard to babysit training progress:
 > - For each experiment, a directory that logs training progress will be automatically generated under logs/ directory. 
 > - From terminal, run 'tensorboard --logdir logs/' to monitor the training progress.

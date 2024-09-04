@@ -138,13 +138,14 @@ Download pre-trained weights: ResNet50, VGG16 and ViT from Google Drive: [[Pretr
 > ```
 
 ## Visualization
+> ```bash
 > python test.py --backbone {vgg16, resnet50} 
 >                --fold {0, 1, 2, 3} 
 >                --benchmark pascal
 >                --nshot {1, 5}
 >                --visualize 'visualize'
 >                --load "/opt/data/private/Code/AFANet/Pretrain/vis/voc_fold_0.pt" 
-   
+> ```   
 ## BibTeX
 If you use this code for your research, please consider citing:
 ````BibTeX

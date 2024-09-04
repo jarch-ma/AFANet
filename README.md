@@ -4,8 +4,6 @@ This is the implementation of the paper "AFANet: Adaptive Frequency-Aware Networ
 
 The codes are implemented based on IMR-HSNet(https://github.com/juhongm999/hsnet), CLIP(https://github.com/openai/CLIP), and https://github.com/jacobgil/pytorch-grad-cam. Thanks for their great work!  
 
-## Requirements (For Chinese, please refer to alternative installation methods below.)
-
 ## Environment settings:
 ```bash
 conda create -n afanet python=3.9

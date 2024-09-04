@@ -9,7 +9,7 @@ The codes are implemented based on IMR-HSNet(https://github.com/juhongm999/hsnet
 conda create -n afanet python=3.9
 conda activate afanet
 pip3 install torch torchvision torchaudio
-conda install -c conda-forge tensorflow
+pip install tensorflow
 pip install tensorboardX
 ```
 

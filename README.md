@@ -111,14 +111,14 @@ Download pre-trained weights: ResNet50, VGG16 and ViT from Google Drive: [[Pretr
 
 ### Babysitting training:
 > Use tensorboard to babysit training progress:
-> - For each experiment, a directory that logs training progress will be automatically generated under logs/ directory. 
-> - From terminal, run 'tensorboard --logdir logs/' to monitor the training progress.
-> - Choose the best model when the validation (mIoU) curve starts to saturate. 
+- For each experiment, a directory that logs training progress will be automatically generated under logs/ directory. 
+- From terminal, run 'tensorboard --logdir logs/' to monitor the training progress.
+- Choose the best model when the validation (mIoU) curve starts to saturate. 
 
 ## Testing
 
 > ### 1. PASCAL-5<sup>i</sup>
-> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/1fB3_jUEw972lDZIs3_S7lj2F5rZVq4Nu?usp=sharing)].
+> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/19IrHg6aPRXe_ukLjfaKKGXyCTl-xyGaH?usp=sharing)].
 > ```bash
 > python test.py --backbone {vgg16, resnet50} 
 >                --fold {0, 1, 2, 3} 
@@ -128,7 +128,7 @@ Download pre-trained weights: ResNet50, VGG16 and ViT from Google Drive: [[Pretr
 > ```
 
 > ### 2. COCO-20<sup>i</sup>
-> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/1fB3_jUEw972lDZIs3_S7lj2F5rZVq4Nu?usp=sharing)].
+> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/19IrHg6aPRXe_ukLjfaKKGXyCTl-xyGaH?usp=sharing)].
 > ```bash
 > python test.py --backbone {vgg16, resnet50} 
 >                --fold {0, 1, 2, 3} 

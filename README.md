@@ -100,14 +100,14 @@ Download pre-trained weights: ResNet50, VGG16 and ViT from Google Drive: [[Pretr
 > python train.py --backbone {vgg16, resnet50}
 >                 --fold {0, 1, 2, 3} 
 >                 --benchmark coco 
->                 --lr 2e-4
+>                 --lr 1e-4
 >                 --bsz 20
 >                 --stage 3
 >                 --logpath "your_experiment_name"
 >                 --traincampath ../afanet_data/CAM_COCO/
 >                 --valcampath ../afanet_data/CAM_COCO/
 > ```
-> * Training takes approx. 3 days until convergence (trained with four RTX 3090 GPUs).
+> * Training takes approx. 2 days until convergence (trained with four RTX 3090 GPUs).
 
 ### Babysitting training:
 > Use tensorboard to babysit training progress:

@@ -20,6 +20,9 @@ conda activate afanet
 pip3 install torch torchvision torchaudio
 conda install -c conda-forge tensorflow
 pip install tensorboardX
+pip install ftfy
+pip install regex
+pip install ttach
 ```
 
 ## Preparing Few-Shot Segmentation Datasets

@@ -59,36 +59,29 @@ class DatasetPASCAL(Dataset):
         support_ignore_idxs = torch.stack(support_ignore_idxs)
 
         if self.split == 'val':
-            # print('val query_name: ', query_name) # 输出：2007_005124
-            query_cam_path = self.cam_val_path + query_name + '--' + str(class_sample) + '.pt' # 输出：/home/s02009/data/hsnet_date/CAM_VOC_Train/CAM_VOC_Train2008_004875--14.pt
-            # print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!!!!!!!!!!!!!!')
+            # print('val query_name: ', query_name) 
+            query_cam_path = self.cam_val_path + query_name + '--' + str(class_sample) + '.pt' 
+            
             query_cam = torch.load(query_cam_path, weights_only=True)
             nshot = len(support_names)
             support_cams = []
             for nn in range(nshot):
                 support_cam_path = self.cam_val_path + support_names[nn] + '--' + str(class_sample) + '.pt'
 
-                # print('val support_cam_path:\n', support_cam_path)
-
-
                 support_cam = torch.load(support_cam_path, weights_only=True).unsqueeze(0)
                 support_cams.append(support_cam)
             support_cams = torch.cat(support_cams, dim=0)
         else:
-            # print('query_name: ',query_name) # 输出：2007_005124
-            query_cam_path = self.cam_train_path + query_name + '--' + str(class_sample) + '.pt' # 输出：/home/s02009/data/hsnet_date/CAM_VOC_Train/CAM_VOC_Train2007_005124--14.pt
+            # print('query_name: ',query_name) 
+            query_cam_path = self.cam_train_path + query_name + '--' + str(class_sample) + '.pt' 
 
-            query_cam = torch.load(query_cam_path, weights_only=True)  # 输出： tensor
+            query_cam = torch.load(query_cam_path, weights_only=True)  
 
 
             nshot = len(support_names)
             support_cams = []
             for nn in range(nshot):
                 support_cam_path = self.cam_train_path + support_names[nn] + '--' + str(class_sample) + '.pt'
-
-
-                # print('trn support_cam_path: \n',support_cam_path)
-
 
                 support_cam = torch.load(support_cam_path, weights_only=True).unsqueeze(0)  # 1 50 50
                 support_cams.append(support_cam)
@@ -161,26 +154,26 @@ class DatasetPASCAL(Dataset):
     def build_img_metadata(self):
 
         def read_metadata(split, fold_id):
-            fold_n_metadata = os.path.join('/opt/data/private/Code/AFANet/data/splits/pascal//%s//fold%d.txt' % (split, fold_id)) # 现在更推荐f-string或者 format写法
+            fold_n_metadata = os.path.join('.../data/splits/pascal//%s//fold%d.txt' % (split, fold_id)) # Specify your folder
 
-            #输出：fold_n_metadata ：data/splits/pascal//trn//fold1.txt
+            
 
 
             with open(fold_n_metadata, 'r') as f:
-                fold_n_metadata = f.read().split('\n')[:-1]   # 逐行读取
+                fold_n_metadata = f.read().split('\n')[:-1]   
             fold_n_metadata = [[data.split('__')[0], int(data.split('__')[1]) - 1] for data in fold_n_metadata]
 
-            return fold_n_metadata   # 输出：['2007_002099', 0] ...
+            return fold_n_metadata   
 
         img_metadata = []
         if self.split == 'trn':  # For training, read image-metadata of "the other" folds
             for fold_id in range(self.nfolds):
                 if fold_id == self.fold:  # Skip validation fold
                     continue
-                img_metadata += read_metadata(self.split, fold_id) # 输出：['2007_000648', 5], ['2007_000768', 5]
+                img_metadata += read_metadata(self.split, fold_id) 
 
         elif self.split == 'val':  # For validation, read image-metadata of "current" fold
-            img_metadata = read_metadata(self.split, self.fold)  # 输出： ['2007_000033', 0], ['2007_000061', 3]
+            img_metadata = read_metadata(self.split, self.fold)  
 
         else:
             raise Exception('Undefined split %s: ' % self.split)

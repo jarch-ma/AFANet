@@ -65,12 +65,12 @@ class afanet(nn.Module):
         self.hpn_learner = HPNLearner(list(reversed(nbottlenecks[-3:])))
         self.cross_entropy_loss = nn.CrossEntropyLoss()
 
-        # fpm
-        self.fpm_low = Octave(512, 64)
-        self.fpm_mid = Octave(1024, 64)
-        self.fpm_hig = Octave(2048, 64)
+        # fam
+        self.fam_low = Octave(512, 64)
+        self.fam_mid = Octave(1024, 64)
+        self.fam_hig = Octave(2048, 64)
 
-        self.vgg_fpm = Octave(512, 64)
+        self.vgg_fam = Octave(512, 64)
 
         self.ncd = NeighborConnectionDecoder()
 
@@ -165,27 +165,27 @@ class afanet(nn.Module):
 
         if isvgg == True: # VGG
 
-            support_fpm_low = self.vgg_fpm(support_low)
-            support_fpm_mid = self.vgg_fpm(support_mid)
-            support_fpm_hig = self.vgg_fpm(support_hig)
+            support_fam_low = self.vgg_fam(support_low)
+            support_fam_mid = self.vgg_fam(support_mid)
+            support_fam_hig = self.vgg_fam(support_hig)
 
-            query_fpm_low = self.vgg_fpm(query_low)
-            query_fpm_mid = self.vgg_fpm(query_mid)
-            query_fpm_hig = self.vgg_fpm(query_hig)
+            query_fam_low = self.vgg_fam(query_low)
+            query_fam_mid = self.vgg_fam(query_mid)
+            query_fam_hig = self.vgg_fam(query_hig)
 
         else: # resnet
 
-            support_fpm_low = self.fpm_low(support_low)
-            support_fpm_mid = self.fpm_mid(support_mid)
-            support_fpm_hig = self.fpm_hig(support_hig)
+            support_fam_low = self.fam_low(support_low)
+            support_fam_mid = self.fam_mid(support_mid)
+            support_fam_hig = self.fam_hig(support_hig)
 
-            query_fpm_low = self.fpm_low(query_low)
-            query_fpm_mid = self.fpm_mid(query_mid)
-            query_fpm_hig = self.fpm_hig(query_hig)
+            query_fam_low = self.fam_low(query_low)
+            query_fam_mid = self.fam_mid(query_mid)
+            query_fam_hig = self.fam_hig(query_hig)
 
         # NCD
-        support_ncd_feats = self.ncd(support_fpm_low, support_fpm_mid, support_fpm_hig)  # ([4, 1, 50, 50])
-        query_ncd_feats = self.ncd(query_fpm_low, query_fpm_mid, query_fpm_hig)  # ([4, 1, 50, 50])
+        support_ncd_feats = self.ncd(support_fam_low, support_fam_mid, support_fam_hig)  # ([4, 1, 50, 50])
+        query_ncd_feats = self.ncd(query_fam_low, query_fam_mid, query_fam_hig)  # ([4, 1, 50, 50])
 
         support_ncd_feats = self.bn(support_ncd_feats)
         support_ncd_feats = self.relu(support_ncd_feats)

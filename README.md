@@ -15,7 +15,7 @@ Few-shot learning aims to recognize novel concepts by leveraging prior knowledge
 
 ## Environment settings:
 ```bash
-conda create -n afanet python=3.9
+conda create -n afanet python=3.10
 conda activate afanet
 pip3 install torch torchvision torchaudio
 conda install -c conda-forge tensorflow

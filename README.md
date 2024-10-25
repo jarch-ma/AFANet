@@ -3,6 +3,7 @@
 This is our official pytorch implementation of AFANet.
 
 ## :fire: News
+[October 21, 2024]： We have released all the code used for training AFANet.
 [October 9, 2024]： AFANet is accepted by IEEE Transactions on Multimedia（TMM） 2024.
 
 ## Abstract

@@ -3,7 +3,7 @@
 This is our official pytorch implementation of AFANet.
 
 ## :fire: News
-- AFANet is accepted by IEEE Transactions on Multimedia（TMM） 2024.
+[October 9, 2024]： AFANet is accepted by IEEE Transactions on Multimedia（TMM） 2024.
 
 ## Abstract
 <div align=center><img width="80%" src="assets/fig.2.png"></div> 

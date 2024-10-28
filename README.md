@@ -3,6 +3,8 @@
 This is our official pytorch implementation of AFANet.
 
 ## :fire: News
+[October 28, 2024]： We uploaded the trained model for testing.
+
 [October 21, 2024]： We have released all the code used for training AFANet.
 
 [October 9, 2024]： AFANet is accepted by IEEE Transactions on Multimedia（TMM） 2024.
@@ -48,7 +50,7 @@ Download following datasets:
 > Download COCO2014 train/val annotations from HSNet Google Drive: [[train2014.zip](https://drive.google.com/file/d/1cwup51kcr4m7v9jO14ArpxKMA4O3-Uge/view?usp=sharing)], [[val2014.zip](https://drive.google.com/file/d/1PNw4U3T2MhzAEBWGGgceXvYU3cZ7mJL1/view?usp=sharing)].
 
 ## Preparing Pre-trained models：
-Download pre-trained weights: ResNet50, VGG16 and ViT (CLIP) from Google Drive: [[Pretrain.zip](https://drive.google.com/file/d/1HKOGnvijW_KGTja_AdyHisRMXztoT10J)].
+Download pre-trained weights (Backbone): ResNet50, VGG16 and ViT (CLIP) from Google Drive: [[Pretrain.zip](https://drive.google.com/file/d/1HKOGnvijW_KGTja_AdyHisRMXztoT10J)].
 
 
 ## Create a directory 'Dataset', and arrange the data in the following way:
@@ -123,7 +125,7 @@ Download pre-trained weights: ResNet50, VGG16 and ViT (CLIP) from Google Drive: 
 ## Testing
 
 > ### 1. PASCAL-5<sup>i</sup>
-> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/19IrHg6aPRXe_ukLjfaKKGXyCTl-xyGaH?usp=sharing)].
+> Checkpoint with tensorboard logs are available on our [[Hugging Face](https://huggingface.co/datasets/Jarch-ma/AFANet/tree/main/checkpoint))].
 > ```bash
 > python test.py --backbone {vgg16, resnet50} 
 >                --fold {0, 1, 2, 3} 
@@ -133,7 +135,7 @@ Download pre-trained weights: ResNet50, VGG16 and ViT (CLIP) from Google Drive: 
 > ```
 
 > ### 2. COCO-20<sup>i</sup>
-> Pretrained models with tensorboard logs are available on our [[Google Drive](https://drive.google.com/drive/folders/19IrHg6aPRXe_ukLjfaKKGXyCTl-xyGaH?usp=sharing)].
+> Checkpoint with tensorboard logs are available on our [[Hugging Face](https://huggingface.co/datasets/Jarch-ma/AFANet/tree/main/checkpoint)].
 > ```bash
 > python test.py --backbone {vgg16, resnet50} 
 >                --fold {0, 1, 2, 3} 

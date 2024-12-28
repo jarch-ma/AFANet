@@ -6,7 +6,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import torch.nn.functional as F
 import torch.nn as nn
 import torch
-from model.AFANet_3 import afanet
+from model.AFANet import afanet
 from common.logger import Logger, AverageMeter
 from common.vis import Visualizer
 from common.evaluation import Evaluator

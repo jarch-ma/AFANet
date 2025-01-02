@@ -152,7 +152,12 @@ Download pre-trained weights (Backbone): ResNet50, VGG16 and ViT (CLIP) from Goo
 >                --nshot {1, 5}
 >                --visualize 'visualize'
 >                --load "/opt/data/private/Code/AFANet/Pretrain/vis/voc_fold_0.pt" 
-> ```   
+> ```
+
+## Email:
+If you have any questions, please contact me: machiachi@163.com
+
+
 ## BibTeX
 If you use this code for your research, please consider citing:
 ````BibTeX

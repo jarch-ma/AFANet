@@ -50,7 +50,7 @@ Download following datasets:
 > Download COCO2014 train/val annotations from HSNet Google Drive: [[train2014.zip](https://drive.google.com/file/d/1cwup51kcr4m7v9jO14ArpxKMA4O3-Uge/view?usp=sharing)], [[val2014.zip](https://drive.google.com/file/d/1PNw4U3T2MhzAEBWGGgceXvYU3cZ7mJL1/view?usp=sharing)].
 
 ## Preparing Pre-trained models：
-Download pre-trained weights (Backbone): ResNet50, VGG16 and ViT (CLIP) from Hugging Face: [[Backbone]([https://drive.google.com/file/d/1cwup51kcr4m7v9jO14ArpxKMA4O3-Uge/view?usp=sharing](https://huggingface.co/datasets/Jarch-ma/AFANet/tree/main))].
+Download pre-trained weights (Backbone): ResNet50, VGG16 and ViT (CLIP) from Hugging Face: [[Backbone]([https://drive.google.com/file/d/1cwup51kcr4m7v9jO14ArpxKMA4O3-Uge/view?usp=sharing](https://huggingface.co/datasets/Jarch-ma/AFANet/tree/main))]
 
 
 ## Create a directory 'Dataset', and arrange the data in the following way:

@@ -100,7 +100,7 @@ Download pre-trained weights (Backbone): ResNet50, VGG16 and ViT (CLIP) from Hug
 >                 --traincampath ../afanet_data/CAM_VOC_Train/
 >                 --valcampath ../afanet_data/CAM_VOC_Val/
 > ```
-> * Training takes approx. 6~7 hours until convergence (trained with four RTX 3090 GPUs).
+> * Training takes approx. 6~7 hours until convergence (trained with two RTX 3090 GPUs).
 
 
 > ### 2. COCO-20<sup>i</sup>

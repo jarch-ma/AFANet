@@ -54,7 +54,7 @@ Download pre-trained weights (Backbone): ResNet50, VGG16 and ViT (CLIP) from Hug
 
 
 
-## Create a directory 'Dataset', and arrange the data in the following way:
+Create a directory 'Dataset', and arrange the data in the following way:
 ```bash
     Dataset/                       
     └── Datasets_AFANet/

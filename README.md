@@ -163,5 +163,14 @@ If you have any questions, please contact me: machiachi@163.com
 
 ## BibTeX
 If you use this code for your research, please consider citing:
-````BibTeX
+````@ARTICLE{10906597,
+  author={Ma, Jiaqi and Xie, Guo-Sen and Zhao, Fang and Li, Zechao},
+  journal={IEEE Transactions on Multimedia}, 
+  title={AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-11},
+  }
+
 ````

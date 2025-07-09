@@ -1,7 +1,9 @@
 # AFANet: Adaptive Frequency-Aware Network for Weakly-Supervised Few-Shot Semantic Segmentation
 
 This is our official pytorch implementation of AFANet.
+
 Paper Link: [[arXiv](https://arxiv.org/abs/2412.17601)], [[TMM](https://ieeexplore.ieee.org/abstract/document/10906597)]
+
 If you like this project, please ⭐ it on GitHub, Thanks!
 
 ## :fire: News

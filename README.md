@@ -7,7 +7,7 @@ Paper Link: [[arXiv](https://arxiv.org/abs/2412.17601)], [[TMM](https://ieeexplo
 If you like this project, please ⭐ it on GitHub, Thanks!
 
 ## :fire: News
-[July 28, 2025, 2025]： If importing the pretrained model fails in **test.py**, replace **fam** with **fpm** in **model/TLG.py**.
+[July 28, 2025]： **Code Fix:** If importing the pretrained model fails in **test.py**, replace **fam** with **fpm** in **model/TLG.py**.
 
 [October 28, 2024]： We uploaded the trained model for testing.
 

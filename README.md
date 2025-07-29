@@ -13,7 +13,7 @@ If you like this project, please ⭐ it on GitHub, Thanks!
 
 [October 21, 2024]： We have released all the code used for training AFANet.
 
-[October 9, 2024]： AFANet is accepted by IEEE Transactions on Multimedia（TMM） 2024.
+[October 9, 2024]： AFANet is accepted by IEEE Transactions on Multimedia (TMM).
 
 ## Abstract
 <div align=center><img width="80%" src="assets/fig.2.png"></div> 

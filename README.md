@@ -18,7 +18,7 @@
   <sup>1</sup> Nanjing University of Science and Technology &nbsp;&nbsp;
   <sup>2</sup> Nanjing University
 </p>
-#
+
 <p align="center">
   If you like this project, please ⭐ it on GitHub, Thanks!
 </p>

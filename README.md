@@ -19,9 +19,7 @@
   <sup>2</sup> Nanjing University
 </p>
 
-<p align="center">
-  If you like this project, please ⭐ it on GitHub, Thanks!
-</p>
+## :loudspeaker: If you like this project, please ⭐ it on GitHub, Thanks!
 
 ## :fire: News
 [July 28, 2025]： **Code Fix:** If importing the pretrained model fails in **test.py**, replace **fam** with **fpm** in **model/TLG.py**.

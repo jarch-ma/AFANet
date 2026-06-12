@@ -19,7 +19,7 @@
   <sup>2</sup> Nanjing University
 </p>
 
-## :loudspeaker: 
+## :loudspeaker: Notice
 If you like this project, please ⭐ it on GitHub, Thanks!
 
 ## :fire: News

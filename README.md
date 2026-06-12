@@ -2,12 +2,7 @@
 
 <p align="center">
   <a href="[https://arxiv.org/abs/2605.19623"><img src="https://img.shields.io/badge/arXiv-2605.19623-b31b1b.svg" alt="arXiv"></a>
-  <a href="[https://arxiv.org/abs/2605.19623"><img src="https://img.shields.io/badge/arXiv-2605.19623-b31b1b.svg" alt="IEEE TMM"></a>
-
-  <a href="https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia">
-  <img src="https://img.shields.io/badge/IEEE%20TMM-Accepted-blue.svg?logo=ieee&logoColor=white" alt="IEEE TMM">
-</a>
-
+  <a href="https://signalprocessingsociety.org/publications-resources/ieee-transactions-multimedia"><img src="https://img.shields.io/badge/IEEE%20TMM-Accepted-blue.svg?logo=ieee&logoColor=white" alt="IEEE TMM"></a>
 </p>
 
 
